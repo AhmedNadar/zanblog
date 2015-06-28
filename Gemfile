@@ -11,7 +11,6 @@ source 'https://rubygems.org'
   gem 'figaro', '~> 1.1.1' # configuration framework
   gem 'simple_form', '~> 3.1.0' # forms made easy
   gem 'font-awesome-rails', '~> 4.3.0.0'
-  gem 'normalize-rails', '~> 3.0.3'
   gem 'haml-rails', '~> 0.9.0'
   gem 'puma'
 
@@ -26,6 +25,7 @@ group :development, :test do
   gem "byebug"
   gem "pry-rails"
   gem 'pry'
+  gem 'pry-byebug'
 end
 
 gem 'rails_12factor', group: :production
