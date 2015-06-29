@@ -1,10 +1,8 @@
-%h1 Posts Index
+%h1#page_title Stuff I've Written
 
-%p I have "#{@posts.count}" Posts
-
-- @posts.each do |post|
-  %p Title" #{link_to post.title, post}
-  %p
-    %b Content:
-    "#{post.content}"
-
+#posts_wrapper.skinny_wrapper
+  - @posts.each do |post|
+    .post
+      %p.date= post.created_at.strftime('%A, %B %d')
+      %h2= link_to post.title, post
+      %hr/
