@@ -9,13 +9,7 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
-    %header#main_navigation.clearfix
-      = link_to "ZAN Blog", root_path, class: "name"
-      %nav
-        = link_to "Articles", posts_path
-        %a{:href => "#"} Projects
-        %a{:href => "#"} Contact
-
-      %p.notice= notice
-      %p.alert= alert
+    =render 'layouts/header'
+    =render 'layouts/notification'
     = yield
+    =render 'layouts/footer'

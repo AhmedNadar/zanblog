@@ -1,0 +1,32 @@
+.wrapper.wrapper_padding.clearfix
+  %div.col-1.about.homepage_content
+    %h2 About
+    %hr/
+    %p I'm a designer &amp; developer living in Colorado Springs, Colorado.
+    %p
+      By day I work as a front-end dev / designer at Precision Nutrition, by night I teach how to design &amp; code rails applications at
+      = succeed "." do
+        %a{ href: "#" } Unicasts
+    %p You can find me speaking in 140 characters on Twitter, swooshing some pixels on Dribbble, and sharing some code on Github.
+
+  %div.col-2.homepage_content
+    %h2 Stuff I've Written
+    %hr/
+    - @posts.each do |post|
+      %h3
+        %a{ href: "#" }=link_to post.title, post
+      %p.date= post.created_at.strftime("%A, %b %d")
+
+  %div.col-3.homepage_content
+    %h2 Stuff I've Built
+    %hr/
+    %h3
+      %a{ href: "#"} Unicasts
+    %p.date Friday April 10th
+    %h3
+      %a{ href: "#"} The Mackenzie Child Community
+    %p.date Friday April 10th
+    %h3
+      %a{ href: "#"} 12 in 12 Challenge
+    %p.date Friday April 10th
+
