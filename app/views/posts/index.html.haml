@@ -1,0 +1,10 @@
+%h1 Posts Index
+
+%p I have "#{@posts.count}" Posts
+
+- @posts.each do |post|
+  %p Title" #{link_to post.title, post}
+  %p
+    %b Content:
+    "#{post.content}"
+

@@ -1,0 +1,19 @@
+=render 'page_title'
+
+=simple_form_for @post do |f|
+
+  - if @post.errors.any?
+    %h2
+      = pluralize(@post.errors.count, "error")
+      prevented this post from saving!
+    %ul
+      - @post.errors.full_messages.each do |msg|
+        %li= msg
+
+  = f.input :title, label: "Title"
+  %br/
+  %br/
+  = f.input :content, label: "Content"
+  %br/
+  %br/
+  = f.button :submit
