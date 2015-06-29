@@ -15,6 +15,7 @@ source 'https://rubygems.org'
   gem 'puma'
   gem 'redcarpet', '~> 3.3.2'
   gem 'pygments.rb', '~> 0.6.3'
+  gem 'friendly_id', '~> 5.1.0'
 
 group :development do
   gem "spring"
