@@ -13,6 +13,8 @@ source 'https://rubygems.org'
   gem 'font-awesome-rails', '~> 4.3.0.0'
   gem 'haml-rails', '~> 0.9.0'
   gem 'puma'
+  gem 'redcarpet', '~> 3.3.2'
+  gem 'pygments.rb', '~> 0.6.3'
 
 group :development do
   gem "spring"

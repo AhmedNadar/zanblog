@@ -12,8 +12,8 @@
     %h1=@post.title
     %hr/
 
-    #content
-      = @post.content
+  #content
+    = markdown @post.content
 
     %hr/
 
@@ -29,3 +29,6 @@
       %a{:onclick => "javascript:window.open('https://plus.google.com/share?url=#{url_for([@post, {only_path: false}])}', '_blank', 'width=800, height=500, top=200, left=300');void(0);"}
         %i.fa.fa-google-plus
   %hr/
+
+= link_to "Edit", edit_post_path(@post)
+= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?" }
