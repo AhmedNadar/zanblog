@@ -6,10 +6,6 @@ class PostsController < ApplicationController
     @posts = Post.all.paginate(:page => params[:page], per_page: 2)
   end
 
-  def new
-    @post = Post.new
-  end
-
   def show
     # If an old id or a numeric id was used to find the record, then
     # the request path will not match the post_path, and we should do
@@ -17,6 +13,10 @@ class PostsController < ApplicationController
     if request.path != post_path(@post)
       redirect_to @post, status: :moved_permanently
     end
+  end
+
+  def new
+    @post = Post.new
   end
 
   def create
@@ -41,7 +41,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    redirect_to posts_path
+    redirect_to posts_path, notice: "Post was deleted!"
   end
 
   private

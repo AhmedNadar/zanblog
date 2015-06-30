@@ -1,0 +1,22 @@
+=render 'page_title'
+
+=simple_form_for @project do |f|
+
+  - if @project.errors.any?
+    %h2
+      = pluralize(@project.errors.count, "error")
+      prevented this project from saving!
+    %ul
+      - @project.errors.full_messages.each do |msg|
+        %li= msg
+
+  = f.input :title, label: "Title"
+  %br/
+  %br/
+  = f.input :description, label: "Description"
+  %br/
+  %br/
+  = f.input :link, label: "Link"
+  %br/
+  %br/
+  = f.button :submit

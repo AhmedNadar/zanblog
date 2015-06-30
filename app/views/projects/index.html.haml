@@ -1,0 +1,9 @@
+%h1#page_title Projects I've Worked on
+
+#posts_wrapper.skinny_wrapper
+  - @projects.each do |project|
+    .post
+      %p.date= project.created_at.strftime('%A, %B %d')
+      %h2= link_to project.title, project
+      %hr/
+= will_paginate @posts, previous_label:'Previous', next_label: 'Next'
