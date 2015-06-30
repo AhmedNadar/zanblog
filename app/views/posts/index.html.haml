@@ -1,3 +1,4 @@
+
 %h1#page_title Stuff I've Written
 
 #posts_wrapper.skinny_wrapper
@@ -6,3 +7,4 @@
       %p.date= post.created_at.strftime('%A, %B %d')
       %h2= link_to post.title, post
       %hr/
+= will_paginate @posts, previous_label:'Previous', next_label: 'Next'
