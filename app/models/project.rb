@@ -5,4 +5,7 @@ class Project < ActiveRecord::Base
   # associations
 
   default_scope -> { order('created_at DESC') }
+
+  extend FriendlyId
+  friendly_id :title , use: [:slugged, :history]
 end
