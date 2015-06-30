@@ -115,6 +115,15 @@ hr {
   }
 }
 
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
 input[type="text"], input[type="email"], input[type="password"], textarea {
   width: 100%;
   max-width: 100%;
@@ -137,12 +146,28 @@ input[type="submit"], .button {
   color: $dark;
   text-decoration: none;
   padding: 1em 2em;
+  @include transition(all .3s ease-in-out);
   &:hover {
     border: 2px solid $highlight;
     color: $highlight;
+    border-radius: 2rem;
   }
 }
 
 @import 'welcome';
 @import 'posts_projects';
 @import 'pygments';
+
+// Set a rem font size with pixel fallback
+// http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+html {
+  @include font-size(16px);
+}

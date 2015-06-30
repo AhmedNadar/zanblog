@@ -5,7 +5,7 @@
     %hr/
 
   #content
-    = @project.description
+    = markdown @project.description
   .button_wrapper
     %a.project_button{ href: @project.link, target: "_blank", titel: @project.title } Visit #{ @project.title }
 
