@@ -154,9 +154,7 @@ input[type="submit"], .button {
   }
 }
 
-@import 'welcome';
-@import 'posts_projects';
-@import 'pygments';
+.hidden { display: none; }
 
 // Set a rem font size with pixel fallback
 // http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/
@@ -171,3 +169,8 @@ input[type="submit"], .button {
 html {
   @include font-size(16px);
 }
+
+
+@import 'welcome';
+@import 'posts_projects';
+@import 'pygments';

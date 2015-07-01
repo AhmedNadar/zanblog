@@ -1,0 +1,12 @@
+%h1#page_title Say Hello!
+.skinny_wrapper.wrapper_padding
+  = simple_form_for @contact do |f|
+    = f.input :name, :required => true
+    %br/
+    = f.input :email, :required => true
+    %br/
+    = f.input :message, :as => :text, :required => true
+    .hidden
+      = f.input :nickname, :hint => 'Leave this field blank!'
+    %div
+      = f.button :submit, 'Send message', :class=> "btn btn-primary"
